@@ -4,7 +4,7 @@ ___
 
 ### Linux ODBC configuration
 
-I recommend installing database ODBC driver before driver manager, therefore PostgreSQL's driver in Ubuntu Server 18.10 is installed with:
+I recommend installing database ODBC driver before driver manager, PostgreSQL's driver in Ubuntu Server 18.10 can installed with:
 
 `apt install odbc-postgresql`
 
@@ -12,9 +12,9 @@ To properly configure ODBC on linux, driver manager is required. For the sake of
 
 `apt install unixodbc`
 
-**odbcinst** is a tool for managing database connections' configuration located in odbc.ini and odbcinst.ini files.
+**odbcinst** is a tool for managing database connection configurations located in odbc.ini and odbcinst.ini files.
 
-**odbc.ini** file contains specific DSNs' configurations and **odbcinst.ini** holds information about currently installed (slash detected) _drivers for database connections_. Upon odbcinst's installation it should automatically create those files and fill odbcinst.ini with detected drivers. If no driver was found it is possible to add it manually or through odbcinst (see man page).
+**odbc.ini** file contains specific DSN configurations and **odbcinst.ini** holds information about currently installed (/ detected) _drivers for database connections_. After odbcinst's installation it should automatically create those files and fill odbcinst.ini with detected drivers. If no driver was found it is possible to add it manually or through odbcinst (see man page).
 
 Sample /etc/odbcinst.ini for PostgreSQL ODBC:
 ```
@@ -58,11 +58,11 @@ This example will not be generated automatically, any configuration in odbc.ini 
 
 ### Python3 ODBC with pyodbc
 
-Firstly, header file `SQL.h` is needed for pyodbc module installation, and this requirement can be fulfilled with installation of unixodbc development files:
+Firstly, header file `SQL.h` is needed for pyodbc module installation, and this requirement can be fulfilled by installation of unixodbc development files:
 
 `apt install unixodbc-dev`
 
-Python3 and pip3 will be required for this step:
+Python3 and pip3 are required for this step:
 
 `apt install python3 pip3`
 
